@@ -28,10 +28,13 @@
     <%= link_to root_path, class: "navber-item" do %>
     <h1>Bookers</h1>
     <% end %>
-    
-    <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "button is-warning is-light"%></p>
+    <p><%= link_to "Home", root_path %></p>
+    <p><%= link_to "Users", users_path %></p>
+    <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
 
     <% else %>
+    <p><%= link_to "Home", root_path %></p>
+    <p><%= link_to "about", home_about_path %></p>
     <p><%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %></p>
     <p><%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %></p>
     <% end %>
