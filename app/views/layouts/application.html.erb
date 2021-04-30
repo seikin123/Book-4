@@ -28,15 +28,15 @@
     <%= link_to root_path, class: "navber-item" do %>
     <h1>Bookers</h1>
     <% end %>
-    <p><%= link_to "Home", root_path %></p>
-    <p><%= link_to "Users", users_path %></p>
-    <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
+    <li><a class="fas fa-home nav-link text-light" href="<%= user_path(current_user.id) %>"> home</a></li>
+    <li><%= link_to "Users", users_path %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
 
     <% else %>
-    <p><%= link_to "Home", root_path %></p>
-    <p><%= link_to "about", home_about_path %></p>
-    <p><%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %></p>
-    <p><%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %></p>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "about", home_about_path %></li>
+    <li><%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %></li>
+    <li><%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %></li>
     <% end %>
     <%= yield %>
   </body>
